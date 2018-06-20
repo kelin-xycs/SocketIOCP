@@ -1,0 +1,5 @@
+D:\老郭\一些研究\SocketIOCPSolution\SocketIOCP\bin\Debug\SocketIOCP.dll
+D:\老郭\一些研究\SocketIOCPSolution\SocketIOCP\bin\Debug\SocketIOCP.pdb
+D:\老郭\一些研究\SocketIOCPSolution\SocketIOCP\obj\Debug\SocketIOCP.dll
+D:\老郭\一些研究\SocketIOCPSolution\SocketIOCP\obj\Debug\SocketIOCP.pdb
+D:\老郭\一些研究\SocketIOCPSolution\SocketIOCP\obj\Debug\SocketIOCP.csprojResolveAssemblyReference.cache

@@ -1,0 +1,8 @@
+D:\老郭\一些研究\SocketIOCPSolution\Test\bin\Debug\Test.exe.config
+D:\老郭\一些研究\SocketIOCPSolution\Test\bin\Debug\Test.exe
+D:\老郭\一些研究\SocketIOCPSolution\Test\bin\Debug\Test.pdb
+D:\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.Form1.resources
+D:\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.Properties.Resources.resources
+D:\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+D:\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.exe
+D:\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.pdb
