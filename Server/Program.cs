@@ -30,7 +30,7 @@ namespace Server
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             socket.Bind(new IPEndPoint(ip, 9527));  //绑定IP地址：端口  
-            socket.Listen(10);    //设定最多10个排队连接请求  
+            socket.Listen(20000);    //设定最多10个排队连接请求  
 
             log.Info("启动监听 " + socket.LocalEndPoint.ToString() + " 成功");
 

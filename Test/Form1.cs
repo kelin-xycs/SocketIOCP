@@ -27,7 +27,6 @@ namespace Test
 
             WriteMsg("Send.");
 
-            Thread.Sleep(2000);
             byte[] bytes = wc.DownloadData("http://127.0.0.1:9527?aa=123");
 
             WriteMsg("Receive: " + Encoding.ASCII.GetString(bytes));
@@ -66,6 +65,7 @@ namespace Test
 
         private void Send()
         {
+
             WebClient wc = new WebClient();
 
             int i;
