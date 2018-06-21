@@ -48,6 +48,9 @@ namespace Server
 
         private static void ProcessBytes( byte[] bytes, int size, Socket socket )
         {
+            socket.Send(Encoding.ASCII.GetBytes("bb"));
+
+            return;
 
             MemoryStream stream = new MemoryStream();
             stream.Write(bytes, 0, size);
@@ -79,6 +82,8 @@ namespace Server
                 + "Vary: Accept-Encoding\r\n"
                 + "Content-Type: text/plain\r\n\r\n"
                 + "Hello World !"));
+
+
         }
     }
 }

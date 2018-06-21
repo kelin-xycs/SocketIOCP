@@ -93,12 +93,19 @@ namespace SocketIOCP
                 }
                 catch(SocketException ex)
                 {
-                    //   ex.ErrorCode == 10060  表示 读取数据 超时， 超时时间 由 socket.ReceiveTimeout 设定
-                    if ( ex.ErrorCode == 10060)
+                    //   ex.ErrorCode == 10035  表示 客户端 已 关闭连接
+                    if (ex.ErrorCode == 10035)
                     {
                         i++;
                         continue;
                     }
+
+                    //   ex.ErrorCode == 10060  表示 读取数据 超时， 超时时间 由 socket.ReceiveTimeout 设定
+                    //if ( ex.ErrorCode == 10060)
+                    //{
+                    //    i++;
+                    //    continue;
+                    //}
 
                     log.Error("Conn close: " + ex.Message);
                     

@@ -24,8 +24,8 @@ namespace SocketIOCP
 
         private IOCallback ioCallback;
 
-        private int maxSocketCountPerWorker = 50;
-        private int maxWorkerCount = 20;
+        private int maxSocketCountPerWorker = 200;
+        private int maxWorkerCount = 100;
 
 
         public Listener(Socket socket, IOCallback ioCallback)
@@ -55,7 +55,8 @@ namespace SocketIOCP
                     log.Info("ListenClientConnect while.");
 
                     Socket clientSocket = socket.Accept();
-                    clientSocket.ReceiveTimeout = 1;
+                    clientSocket.Blocking = false;
+                    //clientSocket.ReceiveTimeout = 1;
 
 
                     lock (workerList)
