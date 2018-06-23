@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IOCallback.cs" />
+    <Compile Include="Job.cs" />
     <Compile Include="Log.cs" />
+    <Compile Include="MemoryStreamBuffer.cs" />
     <Compile Include="Worker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Listener.cs" />

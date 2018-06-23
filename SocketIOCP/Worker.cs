@@ -19,16 +19,21 @@ namespace SocketIOCP
         private ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 
-        private List<Socket> socketList = new List<Socket>();
+        //private List<Socket> socketList = new List<Socket>();
+        private List<Job> jobList = new List<Job>();
 
         private IOCallback ioCallback;
         private List<Worker> workerList;
+
+        internal DateTime currentLoopBeginTime; 
 
 
         public Worker(List<Worker> workerList,  IOCallback ioCallback)
         {
             this.workerList = workerList;
             this.ioCallback = ioCallback;
+
+            this.currentLoopBeginTime = DateTime.Now;
         }
 
 
@@ -40,6 +45,8 @@ namespace SocketIOCP
 
         private void Work()
         {
+            Job job;
+
             Socket socket;
 
             byte[] bytes;
@@ -50,22 +57,36 @@ namespace SocketIOCP
 
             while (true)
             {
-                lock(workerList)
+                lock(this.workerList)
                 {
-                    if (socketList.Count == 0)
+                    if (this.jobList.Count == 0)
                     {
-                        workerList.Remove(this);
+                        this.workerList.Remove(this);
 
-                        log.Info("Remove Worker, index: " + workerList.Count);
+                        log.Info("Remove Worker, index: " + this.workerList.Count);
                         break;
                     }
 
-                    if (i >= this.socketList.Count)
+                    if (i >= this.jobList.Count)
+                    {
                         i = 0;
 
-                    socket = this.socketList[i];
+                        if ((DateTime.Now - this.currentLoopBeginTime).TotalMilliseconds <= 2 )
+                            Thread.Sleep(1);
+                    }
+                       
+
+                    if (i == 0)
+                    {
+                        this.currentLoopBeginTime = DateTime.Now;
+                    }
+
+                    job = this.jobList[i];
                 }
+
                 
+
+                socket = job.Socket;
                 
                 // 通过 socket 接收数据  
 
@@ -75,14 +96,23 @@ namespace SocketIOCP
                 //  客户端 关闭 连接后， 程序并不知道， 还会 一直 循环执行下去 。
 
                 if ( socket.Available > 0 )
+                {
                     bytes = new byte[socket.Available];
+                }
                 else
-                    bytes = new byte[1];
+                {
+                    //bytes = new byte[1];
+                    i++;
+                    continue;
+                }
+                    
                         
                 try
                 {
 
                     size = socket.Receive(bytes);
+
+                    //job.lastAvailableTime = DateTime.Now;
 
 
                     log.Info("Worker Index: " + this.workerList.IndexOf(this) + "\r\n"
@@ -93,7 +123,7 @@ namespace SocketIOCP
                 }
                 catch(SocketException ex)
                 {
-                    //   ex.ErrorCode == 10035  表示 客户端 已 关闭连接
+                    //   ex.ErrorCode == 10035  表示 Socket 在 非阻塞模式（non-blocking）下 当前没有可读取的数据时，抛出的异常
                     if (ex.ErrorCode == 10035)
                     {
                         i++;
@@ -112,9 +142,9 @@ namespace SocketIOCP
                     socket.Shutdown(SocketShutdown.Both);
                     socket.Close();
 
-                    lock (workerList)
+                    lock (this.workerList)
                     {
-                        socketList.Remove(socket);
+                        jobList.Remove(job);
                     }
 
                     continue;
@@ -122,7 +152,7 @@ namespace SocketIOCP
                         
                 try
                 {
-                    this.ioCallback(bytes, size, socket);
+                    job.IOCallback(bytes, size, socket);
                 }
                 catch (Exception ex)
                 {
@@ -131,18 +161,19 @@ namespace SocketIOCP
 
 
                 i++;
+
                 
             }  
         }
         
-        public void AddSocket(Socket socket)
+        internal void AddJob(Job job)
         {
-            this.socketList.Add(socket);
+            this.jobList.Add(job);
         }
 
-        public int SocketCount
+        internal int JobCount
         {
-            get { return this.socketList.Count; }
+            get { return this.jobList.Count; }
         }
     }
 }

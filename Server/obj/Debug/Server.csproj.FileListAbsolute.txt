@@ -6,5 +6,3 @@ D:\老郭\一些研究\SocketIOCPSolution\Server\bin\Debug\SocketIOCP.dll
 D:\老郭\一些研究\SocketIOCPSolution\Server\bin\Debug\SocketIOCP.pdb
 D:\老郭\一些研究\SocketIOCPSolution\Server\obj\Debug\Server.exe
 D:\老郭\一些研究\SocketIOCPSolution\Server\obj\Debug\Server.pdb
-D:\老郭\一些研究\SocketIOCPSolution\Server\bin\Debug\log4net.pdb
-D:\老郭\一些研究\SocketIOCPSolution\Server\bin\Debug\log4net.xml

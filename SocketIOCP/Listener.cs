@@ -46,6 +46,7 @@ namespace SocketIOCP
         {
 
             Worker worker;
+            Job job;
 
             try
             {
@@ -66,7 +67,8 @@ namespace SocketIOCP
 
                             worker = new Worker(workerList, ioCallback);
 
-                            worker.AddSocket(clientSocket);
+                            job = new Job(clientSocket, this.ioCallback);
+                            worker.AddJob( job );
 
                             workerList.Add(worker);
 
@@ -80,11 +82,21 @@ namespace SocketIOCP
 
                         worker = workerList[ workerList.Count - 1 ];
 
-                        if (worker.SocketCount < maxSocketCountPerWorker)
-                        {
-                            worker.AddSocket(clientSocket);
+                        //if (worker.JobCount < maxSocketCountPerWorker)
+                        //{
+                        //    job = new Job(clientSocket, this.ioCallback);
+                        //    worker.AddJob(job);
 
-                            log.Info("Add Socket: index: " + (worker.SocketCount - 1) + "  Worker Index: " + workerList.IndexOf(worker));
+                        //    log.Info("Add Socket: index: " + (worker.JobCount - 1) + "  Worker Index: " + workerList.IndexOf(worker));
+                        //    continue;
+                        //}
+
+                        if ((DateTime.Now - worker.currentLoopBeginTime).TotalMilliseconds < 40)
+                        {
+                            job = new Job(clientSocket, this.ioCallback);
+                            worker.AddJob(job);
+
+                            log.Info("Add Socket: index: " + (worker.JobCount - 1) + "  Worker Index: " + workerList.IndexOf(worker));
                             continue;
                         }
 
@@ -94,7 +106,8 @@ namespace SocketIOCP
 
                             worker = new Worker(workerList, ioCallback);
 
-                            worker.AddSocket(clientSocket);
+                            job = new Job(clientSocket, this.ioCallback);
+                            worker.AddJob(job);
 
                             workerList.Add(worker);
 
