@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.Net;
 using System.Threading;
 
+using SocketIOCP;
+
 namespace Test
 {
     public partial class Form1 : Form
@@ -40,6 +42,11 @@ namespace Test
                 txtMsg.AppendText(DateTime.Now.ToString("HH:mm:ss.fff") + " " + msg + "\r\n");
             }
             
+        }
+
+        private void WriteMsg(int num)
+        {
+            WriteMsg(num.ToString());
         }
 
         private DateTime beginTime;
@@ -116,6 +123,125 @@ namespace Test
         {
             this.seq = 0;
             txtMsg.Clear();
+        }
+
+        private void btnTest2_Click(object sender, EventArgs e)
+        {
+            Q<string> q = new Q<string>();
+
+            q.Add("aa");
+            q.Add("bb");
+            q.Add("cc");
+            q.Add("dd");
+            q.Add("ee");
+            q.Add("ff");
+            q.Add("gg");
+
+            WriteMsg(q.Get());
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+            WriteMsg(q.Count);
+
+            q.Add("fafa");
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            q.Add("aaa");
+            q.Add("bbb");
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+
+            WriteMsg(q.Get());
+
+            WriteMsg(q.Count);
+        }
+
+        private void btnTest3_Click(object sender, EventArgs e)
+        {
+            ChainList<string> l = new ChainList<string>();
+
+            l.Add("aa");
+            l.Add("bb");
+            l.Add("cc");
+            l.Add("dd");
+            l.Add("ee");
+            l.Add("ff");
+            l.Add("gg");
+
+            WriteMsg(l.Visit().element);
+            WriteMsg(l.Count);
+
+            l.MoveNext();
+
+            WriteMsg(l.Visit().element);
+            WriteMsg(l.Count);
+
+            l.MoveNext();
+
+            WriteMsg(l.Visit().element);
+            WriteMsg(l.Count);
+
+            l.Remove(l.Visit());
+            WriteMsg(l.Count);
+
+            WriteMsg(l.Visit().element);
         }
        
     }

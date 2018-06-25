@@ -6,3 +6,15 @@ D:\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.Properties.Resourc
 D:\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 D:\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.exe
 D:\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.pdb
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\bin\Debug\Test.exe.config
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\bin\Debug\Test.exe
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\bin\Debug\Test.pdb
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.Form1.resources
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.Properties.Resources.resources
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.exe
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\obj\Debug\Test.pdb
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\bin\Debug\SocketIOCP.dll
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\bin\Debug\log4net.dll
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Test\bin\Debug\SocketIOCP.pdb

@@ -1,0 +1,9 @@
+2018-06-25 00:01:23,841 线程ID:[1] INFO  Server.Program
+启动监听 127.0.0.1:9527 成功
+
+2018-06-25 00:01:24,997 线程ID:[6] INFO  SocketIOCP.Listener
+Dispatch Worker jobCount: 0
+
+2018-06-25 00:01:25,013 线程ID:[5] INFO  SocketIOCP.Listener
+DispatchJob socketCount: 0
+

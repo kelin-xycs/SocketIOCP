@@ -36,6 +36,8 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblMsg = new System.Windows.Forms.Label();
+            this.btnTest2 = new System.Windows.Forms.Button();
+            this.btnTest3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTest
@@ -113,11 +115,33 @@
             this.lblMsg.TabIndex = 7;
             this.lblMsg.Text = "label2";
             // 
+            // btnTest2
+            // 
+            this.btnTest2.Location = new System.Drawing.Point(594, 24);
+            this.btnTest2.Name = "btnTest2";
+            this.btnTest2.Size = new System.Drawing.Size(75, 23);
+            this.btnTest2.TabIndex = 8;
+            this.btnTest2.Text = "测试 2";
+            this.btnTest2.UseVisualStyleBackColor = true;
+            this.btnTest2.Click += new System.EventHandler(this.btnTest2_Click);
+            // 
+            // btnTest3
+            // 
+            this.btnTest3.Location = new System.Drawing.Point(501, 24);
+            this.btnTest3.Name = "btnTest3";
+            this.btnTest3.Size = new System.Drawing.Size(75, 23);
+            this.btnTest3.TabIndex = 9;
+            this.btnTest3.Text = "测试 3";
+            this.btnTest3.UseVisualStyleBackColor = true;
+            this.btnTest3.Click += new System.EventHandler(this.btnTest3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 505);
+            this.Controls.Add(this.btnTest3);
+            this.Controls.Add(this.btnTest2);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnStop);
@@ -143,6 +167,8 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lblMsg;
+        private System.Windows.Forms.Button btnTest2;
+        private System.Windows.Forms.Button btnTest3;
     }
 }
 

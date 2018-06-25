@@ -6,3 +6,11 @@ D:\老郭\一些研究\SocketIOCPSolution\Server\bin\Debug\SocketIOCP.dll
 D:\老郭\一些研究\SocketIOCPSolution\Server\bin\Debug\SocketIOCP.pdb
 D:\老郭\一些研究\SocketIOCPSolution\Server\obj\Debug\Server.exe
 D:\老郭\一些研究\SocketIOCPSolution\Server\obj\Debug\Server.pdb
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Server\bin\Debug\Server.exe.config
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Server\bin\Debug\Server.exe
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Server\bin\Debug\Server.pdb
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Server\bin\Debug\SocketIOCP.dll
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Server\bin\Debug\SocketIOCP.pdb
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Server\obj\Debug\Server.exe
+C:\新建文件夹\老郭\一些研究\SocketIOCPSolution\Server\obj\Debug\Server.pdb

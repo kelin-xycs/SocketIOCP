@@ -46,8 +46,8 @@ namespace Server
 
         
 
-        //private static void ProcessBytes( MemoryStreamBuffer buffer ,  Socket socket )
-        private static void ProcessBytes( byte[] bytes , int size ,  Socket socket )
+        private static void ProcessBytes( MemoryStreamBuffer buffer ,  Socket socket )
+        //private static void ProcessBytes( byte[] bytes , int size ,  Socket socket )
         {
             socket.Send(Encoding.ASCII.GetBytes("bb"));
 
@@ -73,16 +73,16 @@ namespace Server
             //    IO 回调  接收到 一个 完整的 Request 数据， 就应该把 数据 Pass 给 新线程 来 处理
             //    业务处理   由  新线程   负责
 
-            //socket.Send(Encoding.ASCII.GetBytes("HTTP/1.1 200 OK\r\n"
-            //    + "Date: Mon, 27 Jul 2009 12:28:53 GMT\r\n"
-            //    + "Server: Apache\r\n"
-            //    + "Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT\r\n"
-            //    + "ETag: \"34aa387-d-1568eb00\"\r\n"
-            //    + "Accept-Ranges: bytes\r\n"
-            //    + "Content-Length: 13\r\n"
-            //    + "Vary: Accept-Encoding\r\n"
-            //    + "Content-Type: text/plain\r\n\r\n"
-            //    + "Hello World !"));
+            socket.Send(Encoding.ASCII.GetBytes("HTTP/1.1 200 OK\r\n"
+                + "Date: Mon, 27 Jul 2009 12:28:53 GMT\r\n"
+                + "Server: Apache\r\n"
+                + "Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT\r\n"
+                + "ETag: \"34aa387-d-1568eb00\"\r\n"
+                + "Accept-Ranges: bytes\r\n"
+                + "Content-Length: 13\r\n"
+                + "Vary: Accept-Encoding\r\n"
+                + "Content-Type: text/plain\r\n\r\n"
+                + "Hello World !"));
 
 
         }
